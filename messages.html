@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>💌 My Message to You — Reyner → Kyla</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="falling-container" id="fallingContainer"></div>
+
+<nav>
+    <a href="index.html">📸 Our Memories</a>
+    <a href="messages.html" class="active">💌 My Message to You</a>
+</nav>
+
+<header>
+    <h1>💌 For My Dearest Kyla 💜</h1>
+    <p class="names">From your one and only, Reyner Paul</p>
+    <div class="song-bar">
+        <p>🎵 Our Song: "Favorite Girl" — Justin Bieber</p>
+        <button id="playBtn" class="play-btn">▶ Play Our Song 💜</button>
+    </div>
+</header>
+
+<div class="container">
+
+    <!-- ——— NEW: VIDEO SECTION ——— -->
+    <div class="video-section">
+        <h2 style="text-align:center; color: var(--violet-dark); margin-bottom: 1.5rem;">🎥 A Special Message Just for You 💜</h2>
+        <div class="video-box">
+            <video controls loop preload="metadata" poster="video-cover.jpg">
+                <source src="our-video.mp4" type="video/mp4">
+                Your browser does not support video.
+            </video>
+            <p class="video-note">Watch this while listening to our song 🎶✨</p>
+        </div>
+    </div>
+
+    <!-- ——— YOUR LETTER ——— -->
+    <div class="letter-box">
+        <h2>💕 To Kyla G. Sahak 💕</h2>
+        <div class="letter-content">
+            <p>My dearest Kyla,</p>
+
+            <p> Hello baby ko, I created this website for you..</p>
+
+            <p>From the very first moment I saw you, something changed in me. You brought a light into my life that I didn't even know was missing. Your smile, your laugh, your kindness everything about you makes my world brighter just by being in it, I Love you babyyy ko.</p>
+
+            <p>I would like to say thank you baby for the love, care, and patient. I know nauubos pasensya mo sakin but still andyan ka parin. Salamat rin sa pagiintindi sakin despite being naughty. Thank you rin sa pagwelcome mo sakin sa pamilya mo. It was my first time experiencing being loved by someone and welcomed by family..</p>
+
+            <p>Remember the day when we met inside the comp lab, I was shocked by your beauty. All I thought was the school was full of ugly. No doubt why your name is Kyla because it is a beautiful name for a beautiful girl like you. I really admire you for being truth for yourself. You know baby, you were my first crush inside of the campus, since I was the one who approached you because I was desperate at that time.</p>
+
+            <p>Baby, I love you so much, despite nagdodoubt ako sa kapaligiran mo, andyan ka parin totally showing your loyalty to me. I love you baby ko. I really miss you so much. Mwah.</p>
+
+            <p>Thank you for choosing me. Thank you for loving me. Thank you for being you  my Kyla, my everything, my forever.</p>
+
+            <p>Sana stay strong tayo hopefully tayo paring hanggang huli mwah….</p>
+
+            <p class="letter-signature">
+                Nagmamahal:,<br>
+                Reyner Paul 💜<br>
+                ♾️ Together always
+            </p>
+        </div>
+    </div>
+</div>
+
+<footer>
+    <p><a href="index.html" style="color: var(--pink-dark); text-decoration: none;">← Back to Our Memories 💖</a></p>
+</footer>
+
+<script src="common.js"></script>
+<script>
+setupPlayButton('playBtn');
+setupFalling('fallingContainer');
+</script>
+
+</body>
+
+<script>
+if (sessionStorage.getItem('unlocked') !== 'yes') {
+    window.location.href = 'index.html';
+}
+</script>
+</html>

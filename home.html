@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reyner Paul 💜 Kyla — Our Memories</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="falling-container" id="fallingContainer"></div>
+
+<nav>
+    <a href="index.html" class="active">📸 Our Memories</a>
+    <a href="messages.html">💌 My Message to You</a>
+</nav>
+
+<header>
+    <h1>💜 Our Beautiful Memories 💖</h1>
+    <p class="names">Reyner Paul &nbsp;♥&nbsp; Kyla G. Sahak</p>
+    <p>Every moment with you is my favorite memory</p>
+    
+    <div class="song-bar">
+        <p>🎵 Our Song: "Favorite Girl" — Justin Bieber</p>
+        <button id="playBtn" class="play-btn">▶ Play Our Song 💜</button>
+    </div>
+</header>
+
+<div class="container">
+    <div class="intro">
+        <h2>To my one and only love, Kyla 💕</h2>
+        <p>These photos capture just a few of the countless beautiful moments we've shared. From our first smiles to our quiet nights together — every picture tells our story. Thank you for being my happiness, my love, and my favorite person in the world. I am so proud of you and everything you are becoming. Here's to many more memories, growing together, and loving each other forever. 💜<br><br>— Yours always, Reyner Paul</p>
+        <p style="margin-top: 1rem; font-style: italic; color: var(--violet-dark);">💌 Read my special message → <a href="messages.html" style="color: var(--pink-dark); font-weight: 600;">Click Here</a></p>
+    </div>
+
+    <div class="photo-grid">
+        <div class="photo-card"><img src="1.jpg" alt="1"><div class="photo-caption"><h3>✨ Our First Glimpse</h3><p>Where our story began.</p></div></div>
+        <div class="photo-card"><img src="2.jpg" alt="2"><div class="photo-caption"><h3>💛 Together Out & About</h3><p>Exploring side by side.</p></div></div>
+        <div class="photo-card"><img src="3.jpg" alt="3"><div class="photo-caption"><h3>💕 Your Smile Lights Up My World</h3><p>My favorite sight.</p></div></div>
+        <div class="photo-card"><img src="4.jpg" alt="4"><div class="photo-caption"><h3>💜 Always by Your Side</h3><p>Reyner is always here.</p></div></div>
+        <div class="photo-card"><img src="5.jpg" alt="5"><div class="photo-caption"><h3>💋 My Forever Person</h3><p>The love I've waited for.</p></div></div>
+        <div class="photo-card"><img src="6.jpg" alt="6"><div class="photo-caption"><h3>🌸 Our Love Will Bloom</h3><p>Growing forever together.</p></div></div>
+        <div class="photo-card"><img src="7.jpg" alt="7"><div class="photo-caption"><h3>🌷 Two Flowers, One Heart</h3><p>You & me, always one.</p></div></div>
+        <div class="photo-card"><img src="8.jpg" alt="8"><div class="photo-caption"><h3>🌙 Peaceful Evenings</h3><p>Simple moments are precious.</p></div></div>
+        <div class="photo-card"><img src="9.jpg" alt="9"><div class="photo-caption"><h3>💪 Through Rain & Shine</h3><p>Side by side always.</p></div></div>
+        <div class="photo-card"><img src="10.jpg" alt="10"><div class="photo-caption"><h3>💎 Always in My Heart</h3><p>Carrying you everywhere.</p></div></div>
+        <div class="photo-card"><img src="11.jpg" alt="11"><div class="photo-caption"><h3>🍽️ Our Happy Place</h3><p>Good food, best smiles.</p></div></div>
+        <div class="photo-card"><img src="12.jpg" alt="12"><div class="photo-caption"><h3>🎓 So Proud of You, Kyla</h3><p>Your journey inspires me.</p></div></div>
+    </div>
+</div>
+
+<footer>
+    <p>Made with <span class="heart">❤️</span> by Reyner Paul for Kyla G. Sahak</p>
+    <p style="margin-top: 0.5rem;">Forever Yours &nbsp;♾️&nbsp; 2026 💜</p>
+</footer>
+
+<script src="common.js"></script>
+<script>
+setupPlayButton('playBtn');
+setupFalling('fallingContainer');
+</script>
+
+</body>
+
+<script>
+// ——— PROTECT PAGE ———
+if (sessionStorage.getItem('unlocked') !== 'yes') {
+    window.location.href = 'index.html';
+}
+</script>
+</html>

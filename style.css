@@ -1,0 +1,411 @@
+/* ——— Our Memories Website ——— */
+:root {
+    --pink-light: #FFE6F2;
+    --pink: #FF99CC;
+    --pink-dark: #FF66B2;
+    --violet-light: #F3E8FF;
+    --violet: #B388FF;
+    --violet-dark: #804DE5;
+    --text-dark: #4A266A;
+    --white: #FFFFFF;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Georgia, sans-serif;
+}
+
+body {
+    background: linear-gradient(135deg, var(--pink-light), var(--violet-light));
+    min-height: 100vh;
+    color: var(--text-dark);
+    line-height: 1.6;
+    position: relative;
+    overflow-x: hidden;
+}
+
+/* ——— NAVIGATION ——— */
+nav {
+    background: rgba(255, 255, 255, 0.85);
+    padding: 1rem;
+    text-align: center;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    box-shadow: 0 2px 10px rgba(128, 77, 229, 0.15);
+}
+
+nav a {
+    color: var(--violet-dark);
+    text-decoration: none;
+    margin: 0 1rem;
+    font-weight: 600;
+    transition: color 0.3s;
+}
+
+nav a:hover, nav a.active {
+    color: var(--pink-dark);
+    text-decoration: underline;
+}
+
+/* ——— FALLING ELEMENTS ——— */
+.falling-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 1;
+    overflow: hidden;
+}
+
+.falling {
+    position: absolute;
+    top: -50px;
+    animation: fall linear infinite;
+    opacity: 0.7;
+    z-index: 1;
+}
+
+.heart-fall {
+    font-size: 1.3rem;
+    color: #FF4D94;
+}
+
+.sparkle-fall {
+    font-size: 1rem;
+    color: #B388FF;
+}
+
+@keyframes fall {
+    0% { transform: translateY(-10px) rotate(0deg); opacity: 0; }
+    10% { opacity: 0.7; }
+    90% { opacity: 0.7; }
+    100% { transform: translateY(100vh) rotate(360deg); opacity: 0; }
+}
+
+/* ——— HEADER ——— */
+header {
+    text-align: center;
+    padding: 2.5rem 1rem;
+    background: linear-gradient(135deg, var(--pink-dark), var(--violet-dark));
+    color: white;
+    position: relative;
+    z-index: 10;
+}
+
+header h1 {
+    font-size: 2.2rem;
+    margin-bottom: 0.3rem;
+    letter-spacing: 1px;
+}
+
+header .names {
+    font-size: 1.3rem;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+    color: #FFE6F2;
+}
+
+.song-bar {
+    margin-top: 1rem;
+    padding: 0.8rem 1.5rem;
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 50px;
+    display: inline-block;
+}
+
+.song-bar p {
+    font-size: 0.95rem;
+    margin-bottom: 0.4rem;
+}
+
+.song-bar audio {
+    width: 280px;
+    height: 35px;
+}
+
+/* ——— MAIN CONTENT ——— */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem 1rem;
+    position: relative;
+    z-index: 10;
+}
+
+.intro {
+    text-align: center;
+    margin-bottom: 3rem;
+    padding: 2rem;
+    background: rgba(255, 255, 255, 0.75);
+    border-radius: 24px;
+    box-shadow: 0 6px 20px rgba(128, 77, 229, 0.18);
+}
+
+.intro h2 {
+    color: var(--violet-dark);
+    margin-bottom: 1rem;
+}
+
+.photo-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+}
+
+.photo-card {
+    background: white;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 6px 18px rgba(128, 77, 229, 0.2);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    position: relative;
+    z-index: 10;
+}
+
+.photo-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 12px 30px rgba(128, 77, 229, 0.3);
+}
+
+.photo-card img {
+    width: 100%;
+    height: 380px;
+    object-fit: cover;
+    display: block;
+}
+
+.photo-caption {
+    padding: 1.4rem;
+    background: linear-gradient(135deg, #FFF0F8, #F3E8FF);
+}
+
+.photo-caption h3 {
+    color: var(--violet-dark);
+    margin-bottom: 0.4rem;
+    font-size: 1.1rem;
+}
+
+.photo-caption p {
+    color: var(--text-dark);
+    font-size: 0.95rem;
+    opacity: 0.88;
+}
+
+/* ——— MESSAGES PAGE ——— */
+.letter-box {
+    background: rgba(255, 255, 255, 0.85);
+    border-radius: 24px;
+    padding: 3rem;
+    box-shadow: 0 8px 25px rgba(128, 77, 229, 0.2);
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.letter-box h2 {
+    text-align: center;
+    color: var(--violet-dark);
+    margin-bottom: 2rem;
+    font-size: 1.8rem;
+}
+
+.letter-content {
+    font-size: 1.1rem;
+    line-height: 2;
+    color: var(--text-dark);
+}
+
+.letter-content p {
+    margin-bottom: 1.5rem;
+}
+
+.letter-signature {
+    text-align: right;
+    margin-top: 3rem;
+    font-style: italic;
+    color: var(--violet-dark);
+    font-weight: 600;
+}
+
+/* ——— FOOTER ——— */
+footer {
+    text-align: center;
+    padding: 2.5rem;
+    margin-top: 3rem;
+    color: var(--violet-dark);
+    font-weight: 500;
+    position: relative;
+    z-index: 10;
+}
+
+.heart {
+    color: #FF4D94;
+    font-size: 1.6rem;
+    display: inline-block;
+    animation: heartbeat 1.5s infinite;
+}
+
+@keyframes heartbeat {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.2); }
+}
+
+
+/* ——— PLAY BUTTON STYLE ——— */
+.play-btn {
+    background: linear-gradient(135deg, #FF66B2, #804DE5);
+    color: white;
+    border: none;
+    padding: 0.7rem 2rem;
+    font-size: 1rem;
+    border-radius: 50px;
+    cursor: pointer;
+    margin-top: 0.5rem;
+    transition: all 0.3s ease;
+    font-weight: 600;
+}
+
+.play-btn:hover {
+    transform: scale(1.05);
+    box-shadow: 0 4px 15px rgba(128, 77, 229, 0.4);
+}
+
+.play-btn:disabled {
+    opacity: 0.8;
+}
+
+.play-btn {
+    background: linear-gradient(135deg, #FF66B2, #804DE5);
+    color: white;
+    border: none;
+    padding: 0.7rem 2rem;
+    font-size: 1rem;
+    border-radius: 50px;
+    cursor: pointer;
+    margin-top: 0.5rem;
+    transition: all 0.3s ease;
+    font-weight: 600;
+}
+.play-btn:hover { transform: scale(1.05); }
+.play-btn:disabled { opacity: 0.8; cursor: default; }
+
+
+/* ——— VIDEO SECTION ——— */
+/* ——— VIDEO SECTION ——— */
+.video-section {
+    max-width: 650px;        /* ← Medium size — same as photos */
+    margin: 0 auto 3rem;
+    padding: 2rem;
+    background: rgba(255, 255, 255, 0.85);
+    border-radius: 24px;
+    box-shadow: 0 6px 20px rgba(128, 77, 229, 0.18);
+}
+
+.video-box {
+    text-align: center;
+}
+
+.video-box video {
+    width: 100%;             /* ← Fits nicely inside the card */
+    max-height: 380px;        /* ← Same height as your photos */
+    border-radius: 16px;
+    box-shadow: 0 4px 15px rgba(128, 77, 229, 0.25);
+    object-fit: cover;
+}
+
+.video-note {
+    margin-top: 1rem;
+    font-style: italic;
+    color: var(--violet-dark);
+    font-size: 1rem;
+}
+/* ——— PASSWORD PAGE ——— */
+.password-page {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+}
+
+.password-box {
+    background: rgba(255, 255, 255, 0.88);
+    padding: 3rem 2.5rem;
+    border-radius: 28px;
+    box-shadow: 0 8px 30px rgba(128, 77, 229, 0.25);
+    text-align: center;
+    max-width: 420px;
+    width: 90%;
+    position: relative;
+    z-index: 10;
+}
+
+.password-box h1 {
+    color: var(--violet-dark);
+    margin-bottom: 0.5rem;
+    font-size: 1.8rem;
+}
+
+.password-subtitle {
+    color: var(--pink-dark);
+    margin-bottom: 2rem;
+    font-style: italic;
+}
+
+.password-box label {
+    display: block;
+    text-align: left;
+    margin-bottom: 0.5rem;
+    color: var(--text-dark);
+    font-weight: 600;
+}
+
+.password-box input {
+    width: 100%;
+    padding: 0.9rem 1.2rem;
+    border: 2px solid var(--violet);
+    border-radius: 12px;
+    font-size: 1rem;
+    margin-bottom: 1rem;
+    outline: none;
+    transition: border 0.3s;
+}
+
+.password-box input:focus {
+    border-color: var(--pink-dark);
+}
+
+.unlock-btn {
+    width: 100%;
+    padding: 1rem;
+    background: linear-gradient(135deg, #FF66B2, #804DE5);
+    color: white;
+    border: none;
+    border-radius: 12px;
+    font-size: 1.1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: transform 0.3s;
+    margin-bottom: 1rem;
+}
+
+.unlock-btn:hover {
+    transform: scale(1.03);
+}
+
+.error-msg {
+    color: #FF4D94;
+    display: none;
+    margin-bottom: 1rem;
+    font-weight: 500;
+}
+
+.hint {
+    margin-top: 1rem;
+    font-size: 0.9rem;
+    color: var(--violet);
+    font-style: italic;
+}

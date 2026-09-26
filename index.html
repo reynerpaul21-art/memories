@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🔒 For Kyla Only</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="password-page">
+
+<div class="falling-container" id="fallingContainer"></div>
+
+<div class="password-box">
+    <h1>💜 For Kyla Only 💖</h1>
+    <p class="password-subtitle">This page is made just for you</p>
+    
+    <label for="pwdInput">Enter the secret word 💌</label>
+    <input type="password" id="pwdInput" placeholder="Type here...">
+    <button id="unlockBtn" class="unlock-btn">🔓 Unlock Our Memories</button>
+    
+    <p id="errorMsg" class="error-msg">Wrong password — try again, love 💜</p>
+    <p class="hint">Hint: The person who loves you most in this world 💖</p>
+</div>
+
+<script>
+const CORRECT_PASSWORD = "Kyla";
+
+if (sessionStorage.getItem('unlocked') === 'yes') {
+    window.location.href = 'home.html';
+}
+
+const pwdInput = document.getElementById('pwdInput');
+const unlockBtn = document.getElementById('unlockBtn');
+const errorMsg = document.getElementById('errorMsg');
+
+function checkPassword() {
+    if (pwdInput.value.trim() === CORRECT_PASSWORD) {
+        sessionStorage.setItem('unlocked', 'yes');
+        window.location.href = 'home.html';
+    } else {
+        errorMsg.style.display = 'block';
+        pwdInput.value = '';
+    }
+}
+
+unlockBtn.addEventListener('click', checkPassword);
+pwdInput.addEventListener('keypress', e => e.key === 'Enter' && checkPassword());
+
+const container = document.getElementById('fallingContainer');
+const symbols = ['❤️', '💕', '💜', '✨', '💫', '🌸', '💗'];
+function createFalling() {
+    const el = document.createElement('span');
+    el.className = 'falling ' + (Math.random() > 0.5 ? 'heart-fall' : 'sparkle-fall');
+    el.textContent = symbols[Math.floor(Math.random() * symbols.length)];
+    el.style.left = Math.random() * 100 + '%';
+    el.style.animationDuration = (6 + Math.random() * 8) + 's';
+    el.style.fontSize = (0.8 + Math.random() * 0.8) + 'rem';
+    container.appendChild(el);
+    setTimeout(() => el.remove(), 15000);
+}
+setInterval(createFalling, 400);
+for (let i = 0; i < 15; i++) setTimeout(createFalling, i * 100);
+</script>
+
+</body>
+</html>
